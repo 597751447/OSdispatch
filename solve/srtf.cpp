@@ -5,7 +5,7 @@
 LinkList Min(LinkList &L,int count)
 {
     LinkList p,q,flag;
-    int flagnum=0;       //ç”¨æ¥æ ‡è®°flagå˜é‡å€¼æ˜¯å¦æ”¹å˜
+    int flagnum=0;       //ÓÃÀ´±ê¼Çflag±äÁ¿ÖµÊÇ·ñ¸Ä±ä
     int min;
     p=L->next;
     q=L->next;
@@ -16,7 +16,7 @@ LinkList Min(LinkList &L,int count)
         if(p->data.Serve_Time<min)
         {
             min=p->data.Serve_Time;
-            flag=q;                           //æ³¨æ„å˜é‡qä¿å­˜çš„æ˜¯pæ‰€æŒ‡å‘çš„ä¸Šä¸€èŠ‚ç‚¹çš„ä¿¡æ¯ï¼Œä¸€å®šè¦å¼•å…¥qï¼Œå¦åˆ™ä¼šå‡ºç°è°ƒåº¦è¿›ç¨‹ä¸ºç©ºçš„ç°è±¡
+            flag=q;                           //×¢Òâ±äÁ¿q±£´æµÄÊÇpËùÖ¸ÏòµÄÉÏÒ»½ÚµãµÄĞÅÏ¢£¬Ò»¶¨ÒªÒıÈëq£¬·ñÔò»á³öÏÖµ÷¶È½ø³ÌÎª¿ÕµÄÏÖÏó
             flagnum=1;
         }
         count--;
@@ -25,7 +25,7 @@ LinkList Min(LinkList &L,int count)
     }
     if(flagnum==0)
         flag=L;
-    return flag;                              //æ ‡è®°æœ€å°æœåŠ¡æ—¶é—´çš„ç»“ç‚¹çš„å‰ä¸€ä¸ªç»“ç‚¹çš„æŒ‡é’ˆ
+    return flag;                              //±ê¼Ç×îĞ¡·şÎñÊ±¼äµÄ½áµãµÄÇ°Ò»¸ö½áµãµÄÖ¸Õë
 }
 void Srtf(LinkList &L)
 {
@@ -36,23 +36,23 @@ void Srtf(LinkList &L)
     {
         int flag=0;
         int oldcount=0;
-        count=getCount(L,time);               //åˆ¤æ–­å½“å‰æ—¶é—´å†…ï¼Œå°±ç»ªé˜Ÿåˆ—é‡Œæœ‰å¤šå°‘è¿›ç¨‹
+        count=getCount(L,time);               //ÅĞ¶Ïµ±Ç°Ê±¼äÄÚ£¬¾ÍĞ÷¶ÓÁĞÀïÓĞ¶àÉÙ½ø³Ì
         if(count==0)
-            time++;                           //å¦‚æœæ²¡æœ‰ï¼Œåˆ™å°†æ—¶é—´åŠ ä¸€ï¼Œå†è¿›è¡Œåˆ¤æ–­
+            time++;                           //Èç¹ûÃ»ÓĞ£¬Ôò½«Ê±¼ä¼ÓÒ»£¬ÔÙ½øĞĞÅĞ¶Ï
         if(count==1)
         {
             q=L;
             p=q->next;
-            printf("è¿›ç¨‹%sæ‰§è¡Œ1min\n",p->data.name);
+            printf("½ø³Ì%sÖ´ĞĞ1min\n",p->data.name);
             time++;
             p->data.Serve_Time--;
             if(p->data.Serve_Time==0)
             {
-                printf("è¿›ç¨‹%så·²ç»å®Œæˆ", p->data.name);
+                printf("½ø³Ì%sÒÑ¾­Íê³É", p->data.name);
                 NowTime(time);
-                printf("è¿›ç¨‹%sçš„å‘¨è½¬æ—¶é—´ä¸ºï¼š%d\n",p->data.name,time-p->data.Arrive_Time);
-                Delet(L,q);                 //ã€é‡ç‚¹ã€‘è¿™é‡Œçš„å‚æ•°ä¸€å®šè¦å¡«q,è€Œä¸æ˜¯p,å› ä¸ºå®šä¹‰çš„å‡½æ•°Deletåˆ é™¤çš„æ˜¯pæ‰€æŒ‡å‘ç»“ç‚¹çš„ä¸‹ä¸€ä¸ªç»“ç‚¹
-                flag=1;//æ ‡è¯†æœ‰ç”¨æˆ·è¿›ç¨‹ç»“æŸäº†ï¼Œä¸‹ä¸€æ¬¡å¾ªç¯éœ€è¦è°ƒåº¦
+                printf("½ø³Ì%sµÄÖÜ×ªÊ±¼äÎª£º%d\n",p->data.name,time-p->data.Arrive_Time);
+                Delet(L,q);                 //¡¾ÖØµã¡¿ÕâÀïµÄ²ÎÊıÒ»¶¨ÒªÌîq,¶ø²»ÊÇp,ÒòÎª¶¨ÒåµÄº¯ÊıDeletÉ¾³ıµÄÊÇpËùÖ¸Ïò½áµãµÄÏÂÒ»¸ö½áµã
+                flag=1;//±êÊ¶ÓĞÓÃ»§½ø³Ì½áÊøÁË£¬ÏÂÒ»´ÎÑ­»·ĞèÒªµ÷¶È
             }
             printf("\n");
             oldcount=1;
@@ -69,18 +69,18 @@ void Srtf(LinkList &L)
             }
             q=oldq;
             p=q->next;
-            printf("è¿›ç¨‹%sæ‰§è¡Œ1min\n",p->data.name);
+            printf("½ø³Ì%sÖ´ĞĞ1min\n",p->data.name);
             time++;
             p->data.Serve_Time--;
             if(p->data.Serve_Time==0)
             {
-                printf("è¿›ç¨‹%så·²ç»å®Œæˆ", p->data.name);
+                printf("½ø³Ì%sÒÑ¾­Íê³É", p->data.name);
                 NowTime(time);
-                printf("è¿›ç¨‹%sçš„å‘¨è½¬æ—¶é—´ä¸ºï¼š%d\n",p->data.name,time-p->data.Arrive_Time);
-                Delet(L,q);            //åŒä¸Š
-                flag=1;//æ ‡è¯†æœ‰ç”¨æˆ·è¿›ç¨‹ç»“æŸäº†ï¼Œä¸‹ä¸€æ¬¡å¾ªç¯éœ€è¦è°ƒåº¦
+                printf("½ø³Ì%sµÄÖÜ×ªÊ±¼äÎª£º%d\n",p->data.name,time-p->data.Arrive_Time);
+                Delet(L,q);            //Í¬ÉÏ
+                flag=1;//±êÊ¶ÓĞÓÃ»§½ø³Ì½áÊøÁË£¬ÏÂÒ»´ÎÑ­»·ĞèÒªµ÷¶È
             }
-            //Show(L);  è°ƒè¯•è¯­å¥
+            //Show(L);  µ÷ÊÔÓï¾ä
             printf("\n");
         }
     }

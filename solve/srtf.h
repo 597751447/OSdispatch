@@ -7,7 +7,7 @@
 #pragma once
 #endif //OSDISPATCH_SRTF_H
 #include "../common/utils.h"
-//è·å–å‰©ä½™æ—¶é—´æœ€å°ç»“ç‚¹çš„å‰ä¸€ä¸ªç»“ç‚¹
+//»ñÈ¡Ê£ÓàÊ±¼ä×îĞ¡½áµãµÄÇ°Ò»¸ö½áµã
 LinkList Min(LinkList &L,int count);
-//æœ€çŸ­å‰©ä½™æ—¶é—´ä¼˜å…ˆç®—æ³•æœ¬ä½“
+//×î¶ÌÊ£ÓàÊ±¼äÓÅÏÈËã·¨±¾Ìå
 void Srtf(LinkList &L);

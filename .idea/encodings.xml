@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$USER_HOME$/Downloads/Thread2.cpp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/common/utils.cpp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/common/utils.h" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/main.cpp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/solve/fcfs.cpp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/solve/fcfs.h" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/solve/hrrf.cpp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/solve/hrrf.h" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/solve/spf.cpp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/solve/spf.h" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/solve/srtf.cpp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/solve/srtf.h" charset="GBK" />
   </component>
 </project>

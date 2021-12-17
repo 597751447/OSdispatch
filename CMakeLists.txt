@@ -3,4 +3,4 @@ project(OSdispatch)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(OSdispatch main.cpp common/utils.h common/utils.cpp solve/srtf.h solve/srtf.cpp)
+add_executable(OSdispatch main.cpp common/utils.h common/utils.cpp solve/srtf.h solve/srtf.cpp solve/spf.cpp)

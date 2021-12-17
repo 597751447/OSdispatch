@@ -9,29 +9,29 @@
 #pragma once
 #endif //OSDISPATCH_UTILS_H
 
-struct PCB //PCBç»“æ„ä½“
+struct PCB //PCB½á¹¹Ìå
 {
-    char name[20];       //è¿›ç¨‹å
+    char name[20];       //½ø³ÌÃû
     char codeTime[20];
-    int Arrive_Time;     //åˆ°è¾¾æ—¶é—´
-    int Serve_Time;      //æœåŠ¡æ—¶é—´
-    //int Finish_Time;     //å®Œæˆæ—¶é—´
-    int priority;        //ä¼˜å…ˆçº§
+    int Arrive_Time;     //µ½´ïÊ±¼ä
+    int Serve_Time;      //·şÎñÊ±¼ä
+    //int Finish_Time;     //Íê³ÉÊ±¼ä
+    int priority;        //ÓÅÏÈ¼¶
 };
-typedef struct LNode            //é“¾è¡¨ç»“ç‚¹å®šä¹‰
+typedef struct LNode            //Á´±í½áµã¶¨Òå
 {
     PCB data;
     struct LNode *next;
 }LNode,*LinkList;
-//åˆ©ç”¨å°¾æ’æ³•åˆ›å»ºè¿›ç¨‹
+//ÀûÓÃÎ²²å·¨´´½¨½ø³Ì
 int Create(LinkList &L);
-//è¾“å‡ºè¿›ç¨‹ä¿¡æ¯
+//Êä³ö½ø³ÌĞÅÏ¢
 int Show(LinkList L);
-//æŒ‰ç…§åˆ°è¾¾é¡ºåºæ’åº
+//°´ÕÕµ½´ïË³ĞòÅÅĞò
 void Sort(LinkList &L);
-//æŸ¥çœ‹å½“å‰å°±ç»ªé˜Ÿåˆ—ä¸­çš„è¿›ç¨‹æ•°ï¼Œå…¶ä¸­timeæ˜¯å®è§‚è¿è¡Œæ—¶é—´
+//²é¿´µ±Ç°¾ÍĞ÷¶ÓÁĞÖĞµÄ½ø³ÌÊı£¬ÆäÖĞtimeÊÇºê¹ÛÔËĞĞÊ±¼ä
 int getCount(LinkList &L,int time);
-//åˆ é™¤ç»“ç‚¹å‡½æ•°,åˆ é™¤pçš„ä¸‹ä¸€ä¸ªç»“ç‚¹
+//É¾³ı½áµãº¯Êı,É¾³ıpµÄÏÂÒ»¸ö½áµã
 void Delet(LinkList &L,LinkList p);
-int DecodeTime(char time[]);//å°†æ ‡å‡†æ—¶é—´è½¬æ¢ä¸ºmin
-void NowTime(int time);//è¾“å‡ºå½“å‰è¿è¡Œçš„æ—¶é—´
+int DecodeTime(char time[]);//½«±ê×¼Ê±¼ä×ª»»Îªmin
+void NowTime(int time);//Êä³öµ±Ç°ÔËĞĞµÄÊ±¼ä

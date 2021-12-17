@@ -12,16 +12,16 @@
 #define ERROR 0
 #define INFESIBLE -1
 #define OVERFLOW -2
-void NowTime(int time)//è¾“å‡ºå½“å‰è¿è¡Œçš„æ—¶é—´
+void NowTime(int time)//Êä³öµ±Ç°ÔËĞĞµÄÊ±¼ä
 {
     int hour=time/60;
     int min=time%60;
     if(min<10)
     {
-        printf("å½“å‰æ—¶é—´ä¸º%d : 0%d",hour,min);
+        printf("µ±Ç°Ê±¼äÎª%d : 0%d",hour,min);
     }
     else
-    printf("å½“å‰æ—¶é—´ä¸º%d : %d",hour,min);
+    printf("µ±Ç°Ê±¼äÎª%d : %d",hour,min);
 }
 int DecodeTime(char time[])
 {
@@ -35,28 +35,28 @@ int Create(LinkList &L)
     L=(LinkList)malloc(sizeof(LNode));
     L->next=NULL;
     r=L;
-    printf("è¯·è¾“å…¥è¿›ç¨‹çš„ä¸ªæ•°ï¼š\n");
+    printf("ÇëÊäÈë½ø³ÌµÄ¸öÊı£º\n");
     scanf("%d",&n);
     if(n<=0)
     {
-        printf("è¯·è¾“å…¥æ­£æ•´æ•°ï¼\n");
+        printf("ÇëÊäÈëÕıÕûÊı£¡\n");
         return ERROR;
     }
-    printf("è¯·ä¾æ¬¡è¾“å…¥è¿›ç¨‹åã€åˆ°è¾¾æ—¶é—´ã€æœåŠ¡æ—¶é—´ã€ä¼˜å…ˆçº§\n");
+    printf("ÇëÒÀ´ÎÊäÈë½ø³ÌÃû¡¢µ½´ïÊ±¼ä¡¢·şÎñÊ±¼ä¡¢ÓÅÏÈ¼¶\n");
     for(i=0;i<n;i++)
     {
 
         p=(LinkList)malloc(sizeof(LNode));
-        printf("è¯·è¾“å…¥è¿›ç¨‹å\n");
+        printf("ÇëÊäÈë½ø³ÌÃû\n");
         scanf("%s",&(p->data.name));
-        printf("è¯·è¾“å…¥åˆ°è¾¾æ—¶é—´\n");
+        printf("ÇëÊäÈëµ½´ïÊ±¼ä\n");
         scanf("%s",&(p->data.codeTime));
         p->data.Arrive_Time= DecodeTime(p->data.codeTime);
         //scanf("%d",&(p->data.Arrive_Time));
-        printf("è¯·è¾“å…¥æœåŠ¡æ—¶é—´\n");
+        printf("ÇëÊäÈë·şÎñÊ±¼ä\n");
         scanf("%d",&(p->data.Serve_Time));
         //scanf("%d",&(p->data.Finish_Time));
-        printf("è¯·è¾“å…¥ä¼˜å…ˆçº§\n");
+        printf("ÇëÊäÈëÓÅÏÈ¼¶\n");
         scanf("%d",&(p->data.priority));
 
         r->next=p;
@@ -71,12 +71,12 @@ int Show(LinkList L)
     p=L->next;
     if(!p)
     {
-        printf("ä¸ºç©ºï¼\n");
+        printf("Îª¿Õ£¡\n");
         return ERROR;
     }
     while(p)
     {
-        printf("è¿›ç¨‹åï¼š%s  åˆ°è¾¾æ—¶é—´ï¼š%s  æœåŠ¡æ—¶é—´ï¼š%d  ä¼˜å…ˆçº§ï¼š%d\n",p->data.name, (p->data.codeTime),p->data.Serve_Time,p->data.priority);
+        printf("½ø³ÌÃû£º%s  µ½´ïÊ±¼ä£º%s  ·şÎñÊ±¼ä£º%d  ÓÅÏÈ¼¶£º%d\n",p->data.name, (p->data.codeTime),p->data.Serve_Time,p->data.priority);
         p=p->next;
     }
     return OK;
@@ -87,7 +87,7 @@ void Sort(LinkList &L)
     PCB temp;
     p=L->next;
     q=L->next;
-    while((p!=NULL)&&(p->next!=NULL))       //å½“åˆ›å»ºçš„é˜Ÿåˆ—ä¸­æœ‰ä¸¤ä¸ªåŠä»¥ä¸Šé˜Ÿåˆ—çš„æ—¶å€™ï¼Œåˆ©ç”¨å†’æ³¡æ’åºæ³•æŒ‰ç…§åˆ°è¾¾æ—¶é—´å…ˆåè¿›è¡Œæ’åº
+    while((p!=NULL)&&(p->next!=NULL))       //µ±´´½¨µÄ¶ÓÁĞÖĞÓĞÁ½¸ö¼°ÒÔÉÏ¶ÓÁĞµÄÊ±ºò£¬ÀûÓÃÃ°ÅİÅÅĞò·¨°´ÕÕµ½´ïÊ±¼äÏÈºó½øĞĞÅÅĞò
     {
         for(p=L->next;p->next!=NULL;p=p->next)
         {
@@ -115,7 +115,7 @@ int getCount(LinkList &L,int time)
     }
     return count;
 }
-//åˆ é™¤ç»“ç‚¹å‡½æ•°,åˆ é™¤pçš„ä¸‹ä¸€ä¸ªç»“ç‚¹
+//É¾³ı½áµãº¯Êı,É¾³ıpµÄÏÂÒ»¸ö½áµã
 void Delet(LinkList &L,LinkList p)
 {
     LinkList q;
