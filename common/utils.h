@@ -34,4 +34,4 @@ int getCount(LinkList &L,int time);
 //删除结点函数,删除p的下一个结点
 void Delet(LinkList &L,LinkList p);
 int DecodeTime(char time[]);//将标准时间转换为min
-char* CodeTime(int time);//将时间编码成标准形式
+void NowTime(int time);//输出当前运行的时间

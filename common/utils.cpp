@@ -12,6 +12,12 @@
 #define ERROR 0
 #define INFESIBLE -1
 #define OVERFLOW -2
+void NowTime(int time)//输出当前运行的时间
+{
+    int hour=time/60;
+    int min=time%60;
+    printf("当前时间为%d : %d",hour,min);
+}
 int DecodeTime(char time[])
 {
     int sum=(10*(time[0]-'0')+(time[1]-'0'))*60+(time[3]-'0')*10+time[4]-'0';
