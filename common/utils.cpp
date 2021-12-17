@@ -16,6 +16,11 @@ void NowTime(int time)//输出当前运行的时间
 {
     int hour=time/60;
     int min=time%60;
+    if(min<10)
+    {
+        printf("当前时间为%d : 0%d",hour,min);
+    }
+    else
     printf("当前时间为%d : %d",hour,min);
 }
 int DecodeTime(char time[])

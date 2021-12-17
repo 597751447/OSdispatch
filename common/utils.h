@@ -6,7 +6,7 @@
 #include <string.h>
 #ifndef OSDISPATCH_UTILS_H
 #define OSDISPATCH_UTILS_H
-
+#pragma once
 #endif //OSDISPATCH_UTILS_H
 
 struct PCB //PCB结构体
