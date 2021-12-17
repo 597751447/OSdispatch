@@ -3,6 +3,7 @@
 //
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #ifndef OSDISPATCH_UTILS_H
 #define OSDISPATCH_UTILS_H
 
@@ -11,6 +12,7 @@
 struct PCB //PCB结构体
 {
     char name[20];       //进程名
+    char codeTime[20];
     int Arrive_Time;     //到达时间
     int Serve_Time;      //服务时间
     //int Finish_Time;     //完成时间
@@ -31,3 +33,5 @@ void Sort(LinkList &L);
 int getCount(LinkList &L,int time);
 //删除结点函数,删除p的下一个结点
 void Delet(LinkList &L,LinkList p);
+int DecodeTime(char time[]);//将标准时间转换为min
+char* CodeTime(int time);//将时间编码成标准形式
