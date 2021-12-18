@@ -8,6 +8,8 @@
     <file url="file://$PROJECT_DIR$/solve/fcfs.h" charset="GBK" />
     <file url="file://$PROJECT_DIR$/solve/hrrf.cpp" charset="GBK" />
     <file url="file://$PROJECT_DIR$/solve/hrrf.h" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/solve/psAlg.cpp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/solve/psAlg.h" charset="GBK" />
     <file url="file://$PROJECT_DIR$/solve/spf.cpp" charset="GBK" />
     <file url="file://$PROJECT_DIR$/solve/spf.h" charset="GBK" />
     <file url="file://$PROJECT_DIR$/solve/srtf.cpp" charset="GBK" />
